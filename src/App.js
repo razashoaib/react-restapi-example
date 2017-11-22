@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import Users from './Components/Users'
-
 import './App.css';
 
 class App extends Component {
@@ -9,19 +8,20 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      users: []
+      loading: true,
+      userList: []
     }
   }
 
   // AJAX request to get all the users
   getAllUsers() {
     $.ajax({
-      type: 'GET',
       url: 'https://jsonplaceholder.typicode.com/users',
       dataType: 'json',
       cache: false,
       success: function(data) {
-        this.setState({users: data}, function() {
+        this.setState({userList: data}, function() {
+          this.setState({loading: false});
           console.log(this.state);
         });
       }.bind(this),
@@ -31,22 +31,30 @@ class App extends Component {
     });
   }
 
-  componentDidMount() {
-    this.getAllUsers();
-  }
-
   componentWillMount() {
     this.getAllUsers();
   }
 
-  render() {
-    return (
-      <div className="App">
-        Something in master
-        <Users whatever="someValue" />
-      </div>
-    );
+  componentDidMount() {
+    this.getAllUsers();
   }
+
+  render() {
+
+    if(this.state.loading) {
+        return (
+          <div className="loader"></div>
+        )
+    }
+
+     return (
+       <div className="App">
+         <hr />
+         <h1>Get All Users </h1>
+         <Users userList={this.state.userList} />
+       </div>
+     );
+    }
 }
 
 export default App;

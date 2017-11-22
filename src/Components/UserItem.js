@@ -1,11 +1,30 @@
 import React, { Component } from 'react';
 
-class Users extends Component {
+class UserItem extends Component {
   render() {
     return (
-      <div className="UserItem">
-        Inside the custom component {this.props.whatever}
-      </div>
+      <li className="UserItem">
+
+        <div>
+          <div className="UserItemLeftSection">
+            <img src="img/avatar.png" />
+          </div>
+          <div className="UserItemRightSection">
+            <div>
+                {this.props.user.name}
+            </div>
+            <div>
+                {this.props.user.email}
+            </div>
+            <div>
+                {this.props.user.website}
+            </div>
+            <div>
+                {this.props.user.phone}
+            </div>
+          </div>
+        </div>
+      </li>
     );
   }
 }

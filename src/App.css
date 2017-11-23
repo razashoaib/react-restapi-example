@@ -1,5 +1,26 @@
-.UserItem {
 
+body {
+  margin: auto;
+  width: 90%;
+}
+
+h1 {
+  font-weight: lighter;
+  color: #00688B;
+}
+
+.FilterTextBox {
+  width: 200px;
+  margin-left: 10px;
+  height: 25px;
+  border-radius: 5px;
+}
+
+.UserItem {
+  background-color: $white-color;
+  height: 100px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2px;
   margin-left: 10px;
   margin-top: 10px;
   list-style-type: none;
@@ -15,14 +36,34 @@
 .UserItemLeftSection {
   display: inline-block;
   width: 100px;
+  margin-left: 10px;
 }
 
 .UserItemRightSection {
+  color: #00688B;
   display: inline-block;
-  padding-top: -10px;
+  margin-top: 10px;
+  position: absolute;
+  font-weight: lighter;
 }
 
-.loader {
+.UserName .innerText{
+  font-size: 22px;
+}
+
+.UserEmail .innerText{
+  font-size: 12px;
+}
+
+.UserPhone .innerText{
+  font-size: 12px;
+}
+
+.UserCompany .innerText{
+  font-size: 13px;
+}
+
+.Loader {
   position: fixed;
   top: 0;
   bottom: 0;

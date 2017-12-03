@@ -1,6 +1,6 @@
 # Call Simple Rest API Using ReactJS
 
-This project contains a small implementation of a simple rest api which gets the JSON from publically available rest api and renders it in an HTML list. Moreover this project also uses FontAwesome icons pack for reactjs.
+This is a small project to show how you can call a simple rest api which gets the JSON from publically available rest api and renders it in an HTML list. Moreover this project also shows how you can use FontAwesome icons pack for reactjs.
 
 ## Output
 
